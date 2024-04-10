@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * 
+ * Hooks implementations for youtube_video_formatter.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function youtube_video_formatter_theme($existing, $type, $theme, $path) {
+  return [
+    'youtube_video' => [
+      'variables' => [
+        'video_id' => [],
+        'width' => 560,
+        'height' => 315,
+      ],
+    ],
+  ];
+}
