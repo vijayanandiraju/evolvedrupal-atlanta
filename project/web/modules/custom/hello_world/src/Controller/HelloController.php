@@ -34,7 +34,7 @@ final class HelloController extends ControllerBase {
     if ($node = Node::load($id)) {
       $output['node'] = [
         '#type' => 'item',
-        '#markup' => $node->toLink(),
+        '#markup' => $node->toLink()->toString(),
       ];
     }
 
