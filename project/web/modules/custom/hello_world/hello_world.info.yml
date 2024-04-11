@@ -1,0 +1,5 @@
+name: 'Hello World'
+type: module
+description: 'First module in Evolve Drupal Atlanta.'
+package: Custom
+core_version_requirement: ^10 || ^11

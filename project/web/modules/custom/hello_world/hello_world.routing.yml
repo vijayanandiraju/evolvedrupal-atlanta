@@ -1,0 +1,23 @@
+hello_world.hello:
+  path: '/hello'
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+  requirements:
+    _permission: 'access content'
+
+hello_world.hello_person:
+  path: '/hello/{name}'
+  defaults:
+    _title: 'Hello Person'
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+  requirements:
+    _permission: 'access content'
+
+hello_world.hello_person_node:
+  path: '/hello/{name}/{id}'
+  defaults:
+    _title: 'Hello Person - Node checker'
+    _controller: '\Drupal\hello_world\Controller\HelloController::nodeCheck'
+  requirements:
+    _permission: 'access content'

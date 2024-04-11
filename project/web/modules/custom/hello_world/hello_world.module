@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * 
+ * Hook implementations for hello_world module.
+ */
+
+ /**
+  * Implements hook_form_alter().
+  */
+function hello_world_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    // Make promotion options open by default.
+  $forms = [
+    'node_article_form',
+  ];
+
+  if (in_array($form_id, $forms)) {
+    $form['options']['#open'] = TRUE;
+  }
+
+  // Change access to field_tags on articles depending on user permission.
+  if ($form_id === 'node_article_form') {
+    $user = \Drupal::currentUser();
+    $form['field_tags']['#access'] = $user->hasPermission('administer nodes');
+  }
+}
